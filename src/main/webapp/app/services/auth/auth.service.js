@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('testApp')
+        .module('testProjectApp')
         .factory('Auth', Auth);
 
-    Auth.$inject = ['$rootScope', '$state', '$sessionStorage', '$q', '$translate', 'Principal', 'AuthServerProvider', 'Account', 'LoginService', 'Register', 'Activate', 'Password', 'PasswordResetInit', 'PasswordResetFinish'];
+    Auth.$inject = ['$rootScope', '$state', '$sessionStorage', '$q', 'Principal', 'AuthServerProvider', 'Account', 'LoginService', 'Register', 'Activate', 'Password', 'PasswordResetInit', 'PasswordResetFinish', 'JhiTrackerService'];
 
-    function Auth ($rootScope, $state, $sessionStorage, $q, $translate, Principal, AuthServerProvider, Account, LoginService, Register, Activate, Password, PasswordResetInit, PasswordResetFinish) {
+    function Auth ($rootScope, $state, $sessionStorage, $q, Principal, AuthServerProvider, Account, LoginService, Register, Activate, Password, PasswordResetInit, PasswordResetFinish, JhiTrackerService) {
         var service = {
             activateAccount: activateAccount,
             authorize: authorize,
@@ -114,13 +114,7 @@
 
             function loginThen (data) {
                 Principal.identity(true).then(function(account) {
-                    // After the login the language will be changed to
-                    // the language selected by the user during his registration
-                    if (account!== null) {
-                        $translate.use(account.langKey).then(function () {
-                            $translate.refresh();
-                        });
-                    }
+                    JhiTrackerService.sendActivity();
                     deferred.resolve(data);
                 });
                 return cb();

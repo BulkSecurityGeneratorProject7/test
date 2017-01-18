@@ -10,16 +10,16 @@
         <heap>100</heap>
     </cache-template>
 
-    <cache alias="com.dualion.test.domain.User" uses-template="simple"/>
+    <cache alias="com.org.testproject.domain.User" uses-template="simple"/>
 
-    <cache alias="com.dualion.test.domain.Authority" uses-template="simple"/>
+    <cache alias="com.org.testproject.domain.Authority" uses-template="simple"/>
 
-    <cache alias="com.dualion.test.domain.User.authorities" uses-template="simple"/>
+    <cache alias="com.org.testproject.domain.User.authorities" uses-template="simple"/>
 
-    <cache alias="com.dualion.test.domain.PersistentToken" uses-template="simple"/>
+    <cache alias="com.org.testproject.domain.PersistentToken" uses-template="simple"/>
 
-    <cache alias="com.dualion.test.domain.User.persistentTokens" uses-template="simple"/>
+    <cache alias="com.org.testproject.domain.User.persistentTokens" uses-template="simple"/>
 
-    <cache alias="com.dualion.test.domain.PersistentAuditEvent" uses-template="simple"/>
+    <cache alias="com.org.testproject.domain.PersistentAuditEvent" uses-template="simple"/>
 
 </config>

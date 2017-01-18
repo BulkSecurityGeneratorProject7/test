@@ -13,9 +13,7 @@ describe('account', function () {
     });
 
     it('should fail to login with bad password', function () {
-        element.all(by.css('h1')).first().getAttribute('data-translate').then(function (value) {
-            expect(value).toMatch(/home.title/);
-        });
+        expect(element.all(by.css('h1')).first().getText()).toMatch(/Welcome, Java Hipster!/);
         accountMenu.click();
         login.click();
 
@@ -23,53 +21,39 @@ describe('account', function () {
         password.sendKeys('foo');
         element(by.css('button[type=submit]')).click();
 
-        element(by.css('.alert-danger')).getAttribute('data-translate').then(function (value) {
-            expect(value).toMatch(/login.messages.error.authentication/);
-        });
+        expect(element(by.css('.alert-danger')).getText()).toMatch(/Failed to sign in!/);
     });
 
     it('should login successfully with admin account', function () {
-        element.all(by.css('h1')).first().getAttribute('data-translate').then(function (value) {
-            expect(value).toMatch(/login.title/);
-        });
+        expect(element.all(by.css('h1')).first().getText()).toMatch(/Sign in/);
 
         username.clear().sendKeys('admin');
         password.clear().sendKeys('admin');
         element(by.css('button[type=submit]')).click();
 
-        element(by.css('.alert-success')).getAttribute('data-translate').then(function (value) {
-            expect(value).toMatch(/home.logged.message/);
-        });
+        expect(element(by.css('.alert-success')).getText()).toMatch(/You are logged in as user "admin"/);
     });
 
     it('should be able to update settings', function () {
         accountMenu.click();
         element(by.css('[ui-sref="settings"]')).click();
 
-        element(by.css('h2')).getAttribute('data-translate').then(function (value) {
-            expect(value).toMatch(/settings.title/);
-        });
+        expect(element(by.css('h2')).getText()).toMatch(/User settings for \[admin\]/);
         element(by.css('button[type=submit]')).click();
 
-        element(by.css('.alert-success')).getAttribute('data-translate').then(function (value) {
-            expect(value).toMatch(/settings.messages.success/);
-        });
+        expect(element(by.css('.alert-success')).getText()).toMatch(/Settings saved!/);
     });
 
     it('should be able to update password', function () {
         accountMenu.click();
         element(by.css('[ui-sref="password"]')).click();
 
-        element.all(by.css('h2')).first().getAttribute('data-translate').then(function (value) {
-            expect(value).toMatch(/password.title/);
-        });
+        expect(element.all(by.css('h2')).first().getText()).toMatch(/Password for \[admin\]/);
         password.sendKeys('newpassword');
         element(by.id('confirmPassword')).sendKeys('newpassword');
         element(by.css('button[type=submit]')).click();
 
-        element(by.css('.alert-success')).getAttribute('data-translate').then(function (value) {
-            expect(value).toMatch(/password.messages.success/);
-        });
+        expect(element(by.css('.alert-success')).getText()).toMatch(/Password changed!/);
         accountMenu.click();
         logout.click();
 

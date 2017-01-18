@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('testApp')
+        .module('testProjectApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -13,7 +13,7 @@
             url: '/metrics',
             data: {
                 authorities: ['ROLE_ADMIN'],
-                pageTitle: 'metrics.title'
+                pageTitle: 'Application Metrics'
             },
             views: {
                 'content@': {
@@ -21,12 +21,6 @@
                     controller: 'JhiMetricsMonitoringController',
                     controllerAs: 'vm'
                 }
-            },
-            resolve: {
-                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                    $translatePartialLoader.addPart('metrics');
-                    return $translate.refresh();
-                }]
             }
         });
     }

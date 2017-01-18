@@ -1,24 +1,23 @@
 {
   "generator-jhipster": {
     "jhipsterVersion": "3.12.2",
-    "baseName": "test",
-    "packageName": "com.dualion.test",
-    "packageFolder": "com/dualion/test",
+    "baseName": "TestProject",
+    "packageName": "com.org.testproject",
+    "packageFolder": "com/org/testproject",
     "serverPort": "8080",
     "authenticationType": "jwt",
     "hibernateCache": "ehcache",
     "clusteredHttpSession": false,
-    "websocket": false,
+    "websocket": "spring-websocket",
     "databaseType": "sql",
-    "devDatabaseType": "h2Memory",
+    "devDatabaseType": "mysql",
     "prodDatabaseType": "mysql",
     "searchEngine": "elasticsearch",
     "messageBroker": false,
     "buildTool": "maven",
-    "enableSocialSignIn": false,
-    "jwtSecretKey": "db970221ac90ca53943393e1ff064a70b174a964",
+    "enableSocialSignIn": true,
+    "jwtSecretKey": "5451d44abea6bab2242e9d1170a27351c5b09c66",
     "useSass": false,
-    "yarn": true,
     "applicationType": "monolith",
     "testFrameworks": [
       "gatling",
@@ -26,11 +25,7 @@
       "protractor"
     ],
     "jhiPrefix": "jhi",
-    "enableTranslation": true,
-    "nativeLanguage": "en",
-    "languages": [
-      "en",
-      "es"
-    ]
+    "enableTranslation": false,
+    "serviceDiscoveryType": false
   }
 }

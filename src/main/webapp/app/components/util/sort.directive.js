@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('testApp')
+        .module('testProjectApp')
         .directive('jhSort', jhSort);
 
     function jhSort () {

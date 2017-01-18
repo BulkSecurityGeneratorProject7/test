@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('testApp')
+        .module('testProjectApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -20,12 +20,6 @@
                     controller: 'ResetFinishController',
                     controllerAs: 'vm'
                 }
-            },
-            resolve: {
-                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                    $translatePartialLoader.addPart('reset');
-                    return $translate.refresh();
-                }]
             }
         });
     }

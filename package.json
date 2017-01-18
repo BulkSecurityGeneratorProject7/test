@@ -1,7 +1,7 @@
 {
-  "name": "test",
+  "name": "test-project",
   "version": "0.0.0",
-  "description": "Description for test",
+  "description": "Description for TestProject",
   "private": true,
   "cacheDirectories": [
     "node_modules",

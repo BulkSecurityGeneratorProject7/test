@@ -13,17 +13,17 @@
 
 spring:
     application:
-        name: test
+        name: TestProject
     jackson:
         serialization.write_dates_as_timestamps: false
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:TestProject;DB_CLOSE_DELAY=-1
         name:
         username:
         password:
     jpa:
-        database-platform: com.dualion.test.domain.util.FixedH2Dialect
+        database-platform: com.org.testproject.domain.util.FixedH2Dialect
         database: H2
         open-in-view: false
         show-sql: true
@@ -76,14 +76,14 @@ jhipster:
     security:
         authentication:
             jwt:
-                secret: db970221ac90ca53943393e1ff064a70b174a964
+                secret: 5451d44abea6bab2242e9d1170a27351c5b09c66
                 # Token is valid 24 hours
                 tokenValidityInSeconds: 86400
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
     swagger:
-        title: test API
-        description: test API documentation
+        title: TestProject API
+        description: TestProject API documentation
         version: 0.0.1
         termsOfServiceUrl:
         contactName:

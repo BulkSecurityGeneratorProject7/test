@@ -22,7 +22,7 @@
     </appender>
 -->
 
-    <logger name="com.dualion.test" level="#logback.loglevel#"/>
+    <logger name="com.org.testproject" level="#logback.loglevel#"/>
 
     <logger name="javax.activation" level="WARN"/>
     <logger name="javax.mail" level="WARN"/>
